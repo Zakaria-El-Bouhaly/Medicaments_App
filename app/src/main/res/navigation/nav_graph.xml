@@ -3,23 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment"
-    >
+    app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/homeFragment"
-        android:label="fragment_home_courses"
         android:name="com.example1.projectapp.HomeFragment"
-        tools:layout="@layout/fragment_home"
-        />
+        android:label="fragment_home_courses"
+        tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/searchFragment"
-        android:label="fragment_courses_stagged"
-        tools:layout="@layout/fragment_search"
         android:name="com.example1.projectapp.SearchFragment"
-        />
+        android:label="fragment_courses_stagged"
+        tools:layout="@layout/fragment_search" />
     <fragment
-        android:id="@+id/wichListFragment"
+        android:id="@+id/myistFragment"
+        android:name="com.example1.projectapp.MyListFragment"
         android:label="fragment_matches_courses"
-        android:name="com.example1.projectapp.WichListFragment"
-        tools:layout="@layout/fragment_wich_list" />
+        tools:layout="@layout/fragment_mylist" />
 </navigation>

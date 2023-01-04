@@ -1,6 +1,8 @@
 package com.example1.projectapp
 
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -9,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example1.projectapp.databinding.ItemBinding
 
 
-class MedicamentAdapter: RecyclerView.Adapter<MedicamentAdapter.MyViewHolder>() {
+class MedicamentAdapter(val context: Context): RecyclerView.Adapter<MedicamentAdapter.MyViewHolder>() {
 
 
 
@@ -19,13 +21,18 @@ class MedicamentAdapter: RecyclerView.Adapter<MedicamentAdapter.MyViewHolder>() 
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-
+        holder.bind()
     }
 
     override fun getItemCount(): Int  = 4
 
 
-    class MyViewHolder(private val binding: ItemBinding) : RecyclerView.ViewHolder(binding.root) {
-
+    inner class MyViewHolder(private val binding: ItemBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(){
+            binding.cardView.setOnClickListener {
+                var intent = Intent(context,ItemDetailsActivity::class.java)
+                context.startActivity(intent)
+            }
+        }
     }
 }

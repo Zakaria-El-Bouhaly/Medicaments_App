@@ -26,7 +26,7 @@ class HomeFragment : Fragment() {
     ): View {
         val binding : FragmentHomeBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false);
         binding.recycleView.layoutManager = GridLayoutManager(context,2)
-        val adapter = MedicamentAdapter()
+        val adapter = MedicamentAdapter(requireContext())
         binding.recycleView.adapter = adapter
         return binding.root
     }

@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+
+    <color name="color1">#f4f6fc</color>
+    <color name="color2">#d8dade</color>
+    <color name="color3">#e2f3ff</color>
+    <color name="color4">#367ff9</color>
+
+
     <color name="bottomNavigationTextColor">#B2B2B2</color>
     <color name="bottomNavigationTintColor">#B2B2B2</color>
     <color name="bottomNavigationSelectedColor">#FC4926</color>

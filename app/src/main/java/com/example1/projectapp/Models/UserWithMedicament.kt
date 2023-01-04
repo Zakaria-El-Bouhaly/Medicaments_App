@@ -10,6 +10,6 @@ data class UserWithMedicament(
     parentColumn = "userId",
     entityColumn = "medicamentId"
     )
-    val playlists: List<Medicament>
+    val Medicamentslist: List<Medicament>
 )
 

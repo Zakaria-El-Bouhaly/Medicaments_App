@@ -11,6 +11,6 @@ interface UserWithMedicamentDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertItem(vararg item: UserWithMedicament)
 
-    @Query("SELECT * FROM User")
-    fun getUserWithMedicaments(): List<UserWithMedicament>
+    @Query("SELECT * FROM User where userId==:id")
+    fun getUserWithMedicaments(id: Int): List<UserWithMedicament>
 }

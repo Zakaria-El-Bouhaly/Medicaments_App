@@ -1,5 +1,6 @@
 package com.example1.projectapp.Daos
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -13,6 +14,6 @@ interface UserDao {
     fun insertUser(vararg user: User)
 
     @Query("SELECT * FROM user WHERE email like  :email")
-    fun findByEmail(email: String): Array<User>
+    fun findByEmail(email: String): LiveData<User>
 
 }

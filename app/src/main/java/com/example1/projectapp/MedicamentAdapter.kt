@@ -8,10 +8,11 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
+import com.example1.projectapp.Models.Medicament
 import com.example1.projectapp.databinding.ItemBinding
 
 
-class MedicamentAdapter(val context: Context): RecyclerView.Adapter<MedicamentAdapter.MyViewHolder>() {
+class MedicamentAdapter(val context: Context,private val medicamentList:ArrayList<Medicament>): RecyclerView.Adapter<MedicamentAdapter.MyViewHolder>() {
 
 
 
@@ -24,7 +25,7 @@ class MedicamentAdapter(val context: Context): RecyclerView.Adapter<MedicamentAd
         holder.bind()
     }
 
-    override fun getItemCount(): Int  = 4
+    override fun getItemCount(): Int  = medicamentList.size
 
 
     inner class MyViewHolder(private val binding: ItemBinding) : RecyclerView.ViewHolder(binding.root) {

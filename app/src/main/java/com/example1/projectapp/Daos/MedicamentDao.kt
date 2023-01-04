@@ -1,5 +1,6 @@
 package com.example1.projectapp.Daos
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -12,5 +13,5 @@ interface MedicamentDao {
     fun insertMedicament(vararg medicament: Medicament)
 
     @Query("SELECT * FROM Medicament")
-    fun getAll(): List<Medicament>
+    fun getAll(): LiveData<List<Medicament>>
 }

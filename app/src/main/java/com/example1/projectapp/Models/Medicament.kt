@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Medicament(
-    @PrimaryKey val id: Int,
+    @PrimaryKey val medicamentId: Int,
     @ColumnInfo(name = "name") val nom: String?,
     @ColumnInfo(name = "isVitamin") val isVitamin: Boolean?,
     @ColumnInfo(name = "description") val description: String?,

@@ -14,7 +14,7 @@ data class Medicament(
     @ColumnInfo(name = "price") val price: Double?,
     @ColumnInfo(name = "substance") val substance: String?,
     @ColumnInfo(name = "dosageForm") val dosageForm: String?,
-    @ColumnInfo(name = "dosage") val dose: String?,
+    @ColumnInfo(name = "dosage") val dosage: String?,
     @ColumnInfo(name = "manufacturer") val manufacturer: String?,
     @ColumnInfo(name = "image") val image: String?
 

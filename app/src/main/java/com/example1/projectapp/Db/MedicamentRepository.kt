@@ -12,7 +12,12 @@ class MedicamentRepository(private val medicamentDao: MedicamentDao) {
             medicamentDao.insertMedicament(medicament)
         }.start()
     }
+
     fun getMedicamentById(id: Int): Medicament {
-            return  medicamentDao.getMedicamentById(id)
+        return medicamentDao.getMedicamentById(id)
+    }
+
+    fun getMedicamentByName(medicamentName: String): LiveData<List<Medicament>> {
+        return medicamentDao.getMedicamentByName(medicamentName)
     }
 }

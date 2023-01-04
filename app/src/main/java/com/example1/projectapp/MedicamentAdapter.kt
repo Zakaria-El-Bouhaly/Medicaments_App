@@ -34,18 +34,18 @@ class MedicamentAdapter(val context: Context, private val medicamentList: ArrayL
         val bind = holder.binding
         bind.cardView.setOnClickListener {
             var intent = Intent(context, ItemDetailsActivity::class.java)
-            intent.putExtra("medicament",medicament)
+            intent.putExtra("medicament", medicament)
             context.startActivity(intent)
         }
 
 
-        bind.txtProductName.text = medicament.name.toString()
-        bind.txtProductPieces.text = medicament.description.toString()
-        bind.txtProductPrice.text = medicament.price.toString()
+        bind.cardName.text = medicament.name.toString()
+        bind.cardDescription.text = medicament.description.toString()
+        bind.cardPrice.text = medicament.price.toString() + "DH"
 
         Glide.with(context)
             .load(Uri.parse("file:///android_asset/${medicament.image.toString()}"))
-            .into(bind.imgProductImage)
+            .into(bind.cardImg)
 
 
     }

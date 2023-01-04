@@ -19,10 +19,16 @@ class MedicamentViewModel(application: Application) : AndroidViewModel(applicati
         repository = MedicamentRepository(dao)
         allMedicaments = repository.allMedicaments
     }
+
     fun insert(item: Medicament) {
         repository.insert(item)
     }
-     fun getMedicamentById(id:Int): Medicament {
-         return    repository.getMedicamentById(id)
+
+    fun getMedicamentById(id: Int): Medicament {
+        return repository.getMedicamentById(id)
+    }
+
+    fun getMedicamentByName(name: String): LiveData<List<Medicament>> {
+        return repository.getMedicamentByName(name)
     }
 }

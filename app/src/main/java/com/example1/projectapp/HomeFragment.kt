@@ -28,9 +28,10 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val binding : FragmentHomeBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false);
-        binding.recycleView.layoutManager = GridLayoutManager(context,2)
-        val adapter = MedicamentAdapter(requireContext(),medicamentList)
+        val binding: FragmentHomeBinding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false);
+        binding.recycleView.layoutManager = GridLayoutManager(context, 2)
+        val adapter = MedicamentAdapter(requireContext(), medicamentList)
         binding.recycleView.adapter = adapter
         medicamentViewModel = ViewModelProvider(this)[MedicamentViewModel::class.java]
         medicamentViewModel.allMedicaments.observe(requireActivity(), Observer {

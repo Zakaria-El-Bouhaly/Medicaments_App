@@ -14,7 +14,7 @@ import java.util.concurrent.Executors
 import kotlin.math.roundToInt
 import kotlin.random.Random
 
-@Database(entities = [User::class, Medicament::class], version = 2, exportSchema = false)
+@Database(entities = [User::class, Medicament::class], version = 1, exportSchema = false)
 
 abstract class MedicamentsDB : RoomDatabase() {
     abstract fun userDao(): UserDao

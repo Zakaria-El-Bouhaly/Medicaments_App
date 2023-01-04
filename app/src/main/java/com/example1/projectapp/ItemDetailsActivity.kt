@@ -1,34 +1,29 @@
 package com.example1.projectapp
 
-import MyViewModelFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example1.projectapp.Models.Medicament
 import com.example1.projectapp.databinding.ActivityItemDetailsBinding
 import com.example1.projectapp.viewModels.MedicamentViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers.Main
+import kotlinx.coroutines.launch
 
 class ItemDetailsActivity : AppCompatActivity() {
     lateinit var binding: ActivityItemDetailsBinding
     lateinit var medicament: Medicament
+    private lateinit var medicamentViewModel: MedicamentViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_item_details)
-        val medicamentId = intent.getIntExtra("medicamentId", 1)
+        var medicament = intent.getSerializableExtra("medicament")  as Medicament
 
-//        val medicamentViewModel = ViewModelProvider(this,id).get(MedicamentViewModel::class.java)
+        Log.d("TEST!!!",medicament.name.toString())
 
-
-        val medicamentViewModel = ViewModelProvider(
-            this,
-            MyViewModelFactory(application, medicamentId)
-        ).get(MedicamentViewModel::class.java)
-
-        medicamentViewModel.MedicamentById.observe(this, Observer {
-            medicament = it
-        })
 
     }
 }

@@ -30,11 +30,11 @@ class MedicamentAdapter(val context: Context, private val medicamentList: ArrayL
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val medicament = medicamentList.get(position)
+        val medicament = medicamentList[position]
         val bind = holder.binding
         bind.cardView.setOnClickListener {
             var intent = Intent(context, ItemDetailsActivity::class.java)
-            intent.putExtra("medicamentId", medicament.medicamentId)
+            intent.putExtra("medicament",medicament)
             context.startActivity(intent)
         }
 

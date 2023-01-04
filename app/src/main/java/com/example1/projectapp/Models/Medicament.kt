@@ -3,6 +3,7 @@ package com.example1.projectapp.Models
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 @Entity
 data class Medicament(
@@ -17,4 +18,4 @@ data class Medicament(
     @ColumnInfo(name = "manufacturer") val manufacturer: String?,
     @ColumnInfo(name = "image") val image: String?
 
-)
+):Serializable

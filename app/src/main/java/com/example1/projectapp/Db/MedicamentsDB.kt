@@ -4,9 +4,12 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.example1.projectapp.Daos.CartUserDao
 import com.example1.projectapp.Daos.MedicamentDao
 import com.example1.projectapp.Daos.UserDao
+import com.example1.projectapp.Models.Cart
 import com.example1.projectapp.Models.Medicament
 import com.example1.projectapp.Models.User
 import com.example1.projectapp.utils.ioThread
@@ -14,11 +17,12 @@ import java.util.concurrent.Executors
 import kotlin.math.roundToInt
 import kotlin.random.Random
 
-@Database(entities = [User::class, Medicament::class], version = 1, exportSchema = false)
-
+@Database(entities = [User::class, Medicament::class, Cart::class], version = 1, exportSchema = false)
+@TypeConverters(TypeConverter::class)
 abstract class MedicamentsDB : RoomDatabase() {
     abstract fun userDao(): UserDao
     abstract fun medicamentDao(): MedicamentDao
+    abstract fun cartUserDao(): CartUserDao
 
     companion object {
         @Volatile
@@ -59,7 +63,8 @@ abstract class MedicamentsDB : RoomDatabase() {
                                     "form$i",
                                     "${Random.nextInt(1,10)} mg",
                                     "USA",
-                                    "medicament$i.jpg"
+                                    "medicament$i.jpg",
+
                                 )
                             )
                         }

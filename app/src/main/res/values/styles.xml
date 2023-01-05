@@ -6,22 +6,28 @@
         <item name="colorPrimaryDark">@color/md_blue_grey_800</item>
         <item name="colorAccent">@color/colorAccent</item>
 
-        <item name="colorControlNormal">@color/md_white_1000</item>
+        <item name="colorControlNormal">@color/black</item>
     </style>
-    <style name="EditScreenTextInputLayoutStyle" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorControlNormal">@color/textInputLayout</item>
-        <item name="colorControlActivated">@color/textInputLayout</item>
-        <item name="colorControlHighlight">@color/textInputLayout</item>
-        <item name="colorAccent">@color/textInputLayout</item>
-        <item name="android:textColorHint">@color/textInputLayout</item>
-    </style>
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
     <style name="BottomNavigationStyle" parent="Widget.Design.BottomNavigationView">
         <item name="android:background">@color/bottomNavigationBackground</item>
-        <item name="itemIconTint">@color/bottomNavigationTintColor</item>
-        <item name="itemTextColor">@color/bottomNavigationTextColor</item>
+        <item name="itemIconTint">@color/color4</item>
+        <item name="itemTextColor">@color/color4</item>
         <item name="fontFamily">@font/poppins</item>
     </style>
 
+    <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <!-- Gets rid of the search icon -->
+        <item name="searchIcon">@drawable/ic_search</item>
+        <!-- Gets rid of the "underline" in the text -->
+        <item name="queryBackground">@color/white</item>
+        <!-- Gets rid of the search icon when the SearchView is expanded -->
+        <item name="searchHintIcon">@null</item>
+        <!-- The hint text that appears when the user has not typed anything -->
+        <item name="queryHint">Enter name of any Medicaments</item>
+        <item name="color">@color/black</item>
+        <item name="android:title">HHHH</item>
+    </style>
 </resources>

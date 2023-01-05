@@ -2,12 +2,13 @@ package com.example1.projectapp
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.SearchView.OnQueryTextListener
+import androidx.appcompat.widget.SearchView
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
@@ -32,16 +33,14 @@ class SearchFragment : Fragment() {
         val binding: FragmentSearchBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_search, container, false);
 
-
-
-
         binding.searchList.layoutManager = GridLayoutManager(context, 2)
         val adapter = MedicamentAdapter(requireContext(), medicamentList)
         binding.searchList.adapter = adapter
         medicamentViewModel = ViewModelProvider(this)[MedicamentViewModel::class.java]
 
 
-        binding.searchView.setOnQueryTextListener(object : OnQueryTextListener {
+        binding.searchView.setOnQueryTextListener(object :
+            android.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(p0: String?): Boolean {
                 return false
             }
@@ -58,6 +57,20 @@ class SearchFragment : Fragment() {
             }
 
         })
+//        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+//            override fun onQueryTextSubmit(query: String?): Boolean {
+//                return false
+//            }
+//            override fun onQueryTextChange(newText: String?): Boolean {
+//                medicamentViewModel.getMedicamentByName(newText + "%")
+//                    .observe(requireActivity(), Observer {
+//                        medicamentList.clear()
+//                        medicamentList.addAll(it)
+//                        adapter.notifyDataSetChanged()
+//                    })
+//                return true
+//            }
+//        })
 
 
 
@@ -69,4 +82,6 @@ class SearchFragment : Fragment() {
         @JvmStatic
         fun newInstance() = SearchFragment()
     }
+
+
 }

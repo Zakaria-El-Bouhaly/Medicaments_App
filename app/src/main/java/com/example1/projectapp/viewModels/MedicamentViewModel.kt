@@ -10,7 +10,7 @@ import com.example1.projectapp.Models.Medicament
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.async
 
-class MedicamentViewModel(application: Application) : AndroidViewModel(application) {
+public class MedicamentViewModel(application: Application) : AndroidViewModel(application) {
     private val repository: MedicamentRepository
     val allMedicaments: LiveData<List<Medicament>>
 

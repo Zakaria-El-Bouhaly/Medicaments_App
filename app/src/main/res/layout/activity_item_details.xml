@@ -250,6 +250,7 @@
                 </LinearLayout>
 
                 <Button
+                    android:id="@+id/addToCart"
                     android:layout_width="300dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center"

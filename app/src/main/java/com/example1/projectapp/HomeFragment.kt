@@ -33,7 +33,7 @@ class HomeFragment : Fragment() {
         binding.recycleView.layoutManager = GridLayoutManager(context, 2)
         val adapter = MedicamentAdapter(requireContext(), medicamentList)
         binding.recycleView.adapter = adapter
-        medicamentViewModel = ViewModelProvider(this)[MedicamentViewModel::class.java]
+        medicamentViewModel = ViewModelProvider(this,defaultViewModelProviderFactory)[MedicamentViewModel::class.java]
         medicamentViewModel.allMedicaments.observe(requireActivity(), Observer {
             medicamentList.clear()
             medicamentList.addAll(it)

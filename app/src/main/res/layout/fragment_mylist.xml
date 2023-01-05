@@ -7,11 +7,11 @@
         android:layout_height="match_parent"
         tools:context=".MyListFragment">
 
-        <!-- TODO: Update blank fragment layout -->
-        <TextView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/myList"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
+            android:layout_margin="10dp" />
 
     </FrameLayout>
 </layout>

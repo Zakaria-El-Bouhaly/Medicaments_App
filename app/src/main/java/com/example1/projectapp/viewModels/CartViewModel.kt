@@ -23,7 +23,10 @@ public  class CartViewModel(application: Application) : AndroidViewModel(applica
     fun insert(cart: Cart) {
         repository.insert(cart)
     }
-    fun getAllCartByUserId(id: Int): LiveData<List<Medicament>> {
-        return repository.getAllCartByUserId(id)
+    fun delete(cart: Cart) {
+        repository.delete(cart)
+    }
+    fun getAllCartByUser(id: Int): LiveData<List<Cart>> {
+        return repository.getAllCartByUser(id)
     }
 }

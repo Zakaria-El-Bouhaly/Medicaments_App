@@ -16,7 +16,7 @@ import com.example1.projectapp.databinding.FragmentSearchBinding
 import com.example1.projectapp.viewModels.CartViewModel
 import com.example1.projectapp.viewModels.MedicamentViewModel
 
-class MyListFragment : Fragment() {
+class MyListFragment : Fragment() , IDeletecListener{
     private var cartList: ArrayList<Cart> = ArrayList()
     private var medicament: ArrayList<Medicament> = ArrayList()
     private lateinit var cartViewModel: CartViewModel
@@ -33,12 +33,12 @@ class MyListFragment : Fragment() {
         val binding: FragmentMylistBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_mylist, container, false);
         binding.myList.layoutManager = GridLayoutManager(context, 2)
-        val adapter = MedicamentAdapter(requireContext(),medicament)
+        val adapter = MyMedicamentAdapter(requireContext(),cartList,this)
         binding.myList.adapter = adapter
         cartViewModel = ViewModelProvider(this)[CartViewModel::class.java]
-        cartViewModel.getAllCartByUserId(1).observe(requireActivity(), Observer {
-            medicament.clear()
-            medicament.addAll(it)
+        cartViewModel.getAllCartByUser(1).observe(requireActivity(), Observer {
+            cartList.clear()
+            cartList.addAll(it)
             adapter.notifyDataSetChanged()
         })
         return binding.root
@@ -48,5 +48,9 @@ class MyListFragment : Fragment() {
 
         @JvmStatic
         fun newInstance() = MyListFragment()
+    }
+
+    override fun delete(cart: Cart) {
+        cartViewModel.delete(cart)
     }
 }

@@ -9,7 +9,10 @@ import com.example1.projectapp.Models.Medicament
 interface CartUserDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertItem(vararg item: Cart)
-    @Transaction
-    @Query("SELECT medicament FROM cart where user_id==:id")
-    fun getAllCart(id: Int): LiveData<List<Medicament>>
+    @Delete
+    fun deleteItem(vararg item: Cart)
+
+    @Query("SELECT * FROM cart where user_id==:id")
+    fun getAllCartByUser(id: Int): LiveData<List<Cart>>
+
 }

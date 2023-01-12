@@ -12,9 +12,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example1.projectapp.Models.Cart
 import com.example1.projectapp.Models.Medicament
 import com.example1.projectapp.databinding.FragmentMylistBinding
-import com.example1.projectapp.databinding.FragmentSearchBinding
 import com.example1.projectapp.viewModels.CartViewModel
-import com.example1.projectapp.viewModels.MedicamentViewModel
+import java.util.Random
+import kotlin.collections.ArrayList
 
 class MyListFragment : Fragment() , IDeletecListener{
     private var cartList: ArrayList<Cart> = ArrayList()
@@ -37,6 +37,16 @@ class MyListFragment : Fragment() , IDeletecListener{
         binding.myList.adapter = adapter
         cartViewModel = ViewModelProvider(this)[CartViewModel::class.java]
         cartViewModel.getAllCartByUser(1).observe(requireActivity(), Observer {
+
+            if(it.isEmpty()){
+                binding.oops.text = MTConstants.OOPS[Random().nextInt(MTConstants.OOPS.size)]
+                binding.oopsText.setText(R.string.OOPS)
+                binding.oopsText.visibility = View.VISIBLE;
+                binding.oops.visibility = View.VISIBLE;
+            }else{
+                binding.oopsText.visibility = View.GONE;
+                binding.oops.visibility = View.GONE;
+            }
             cartList.clear()
             cartList.addAll(it)
             adapter.notifyDataSetChanged()

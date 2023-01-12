@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example1.projectapp.Models.Medicament
 import com.example1.projectapp.databinding.FragmentSearchBinding
 import com.example1.projectapp.viewModels.MedicamentViewModel
+import java.util.*
+import kotlin.collections.ArrayList
 
 class SearchFragment : Fragment() {
 
@@ -49,6 +51,15 @@ class SearchFragment : Fragment() {
             override fun onQueryTextChange(p0: String?): Boolean {
                 medicamentViewModel.getMedicamentByName(p0 + "%")
                     .observe(requireActivity(), Observer {
+                        if(it.isEmpty()){
+                            binding.oops.text = MTConstants.OOPS[Random().nextInt(MTConstants.OOPS.size)]
+                            binding.oopsText.setText(R.string.OOPS)
+                            binding.oopsText.visibility = View.VISIBLE;
+                            binding.oops.visibility = View.VISIBLE;
+                        }else{
+                            binding.oopsText.visibility = View.GONE;
+                            binding.oops.visibility = View.GONE;
+                        }
                         medicamentList.clear()
                         medicamentList.addAll(it)
                         adapter.notifyDataSetChanged()

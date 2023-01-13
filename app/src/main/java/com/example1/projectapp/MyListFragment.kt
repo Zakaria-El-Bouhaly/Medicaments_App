@@ -9,8 +9,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example1.projectapp.Models.Cart
-import com.example1.projectapp.Models.Medicament
+import com.example1.projectapp.models.Cart
+import com.example1.projectapp.models.Medicament
 import com.example1.projectapp.databinding.FragmentMylistBinding
 import com.example1.projectapp.viewModels.CartViewModel
 import java.util.Random

@@ -4,14 +4,12 @@ package com.example1.projectapp
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example1.projectapp.Models.Medicament
+import com.example1.projectapp.models.Medicament
 import com.example1.projectapp.databinding.ItemBinding
 
 

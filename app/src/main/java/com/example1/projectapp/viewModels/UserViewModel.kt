@@ -2,9 +2,9 @@ package com.example1.projectapp.viewModels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import com.example1.projectapp.Db.MedicamentsDB
-import com.example1.projectapp.Db.UserRepository
-import com.example1.projectapp.Models.User
+import com.example1.projectapp.db.MedicamentsDB
+import com.example1.projectapp.db.UserRepository
+import com.example1.projectapp.models.User
 
 class UserViewModel (application: Application) : AndroidViewModel(application){
     private val repository: UserRepository

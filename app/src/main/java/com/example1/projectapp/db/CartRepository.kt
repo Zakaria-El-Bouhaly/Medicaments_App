@@ -1,8 +1,8 @@
-package com.example1.projectapp.Db
+package com.example1.projectapp.db
 
 import androidx.lifecycle.LiveData
 import com.example1.projectapp.daos.CartUserDao
-import com.example1.projectapp.Models.Cart
+import com.example1.projectapp.models.Cart
 
 
 class CartRepository(private val cartDao: CartUserDao) {

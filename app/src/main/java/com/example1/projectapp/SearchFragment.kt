@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example1.projectapp.Models.Medicament
+import com.example1.projectapp.models.Medicament
 import com.example1.projectapp.databinding.FragmentSearchBinding
 import com.example1.projectapp.viewModels.MedicamentViewModel
 import java.util.*

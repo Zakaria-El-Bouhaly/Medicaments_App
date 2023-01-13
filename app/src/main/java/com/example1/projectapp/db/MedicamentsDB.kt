@@ -1,4 +1,4 @@
-package com.example1.projectapp.Db
+package com.example1.projectapp.db
 
 import android.content.Context
 import androidx.room.Database
@@ -9,9 +9,9 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example1.projectapp.daos.CartUserDao
 import com.example1.projectapp.daos.MedicamentDao
 import com.example1.projectapp.daos.UserDao
-import com.example1.projectapp.Models.Cart
-import com.example1.projectapp.Models.Medicament
-import com.example1.projectapp.Models.User
+import com.example1.projectapp.models.Cart
+import com.example1.projectapp.models.Medicament
+import com.example1.projectapp.models.User
 import com.example1.projectapp.utils.ioThread
 import kotlin.math.roundToInt
 import kotlin.random.Random

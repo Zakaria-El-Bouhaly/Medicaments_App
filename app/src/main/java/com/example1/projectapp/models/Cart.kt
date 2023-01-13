@@ -1,4 +1,4 @@
-package com.example1.projectapp.Models
+package com.example1.projectapp.models
 
 import androidx.room.*
 @Entity

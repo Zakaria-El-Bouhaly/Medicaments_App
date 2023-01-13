@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import com.example1.projectapp.Models.User
+import com.example1.projectapp.models.User
 import com.example1.projectapp.databinding.ActivityRegisterBinding
 import com.example1.projectapp.viewModels.UserViewModel
 import com.example1.projectapp.viewModels.VMFactory

@@ -1,8 +1,7 @@
-package com.example1.projectapp.Db
+package com.example1.projectapp.db
 
-import androidx.lifecycle.LiveData
 import com.example1.projectapp.daos.UserDao
-import com.example1.projectapp.Models.User
+import com.example1.projectapp.models.User
 
 class UserRepository(private  val userDao: UserDao) {
     fun insert(user: User) {

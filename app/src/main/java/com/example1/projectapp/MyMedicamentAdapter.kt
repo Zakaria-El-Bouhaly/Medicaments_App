@@ -4,19 +4,13 @@ package com.example1.projectapp
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example1.projectapp.Models.Cart
-import com.example1.projectapp.Models.Medicament
-import com.example1.projectapp.databinding.ItemBinding
+import com.example1.projectapp.models.Cart
 import com.example1.projectapp.databinding.MyitemBinding
-import com.example1.projectapp.viewModels.CartViewModel
 
 
 class MyMedicamentAdapter(val context: Context, private val cartList: ArrayList<Cart>,private val listener: IDeletecListener) :

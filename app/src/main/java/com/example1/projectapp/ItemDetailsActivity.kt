@@ -5,17 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
-import com.example1.projectapp.Models.Cart
-import com.example1.projectapp.Models.Medicament
+import com.example1.projectapp.models.Cart
+import com.example1.projectapp.models.Medicament
 import com.example1.projectapp.databinding.ActivityItemDetailsBinding
 import com.example1.projectapp.viewModels.CartViewModel
 import com.example1.projectapp.viewModels.MedicamentViewModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers.Main
-import kotlinx.coroutines.launch
 
 class ItemDetailsActivity : AppCompatActivity() {
     lateinit var binding: ActivityItemDetailsBinding

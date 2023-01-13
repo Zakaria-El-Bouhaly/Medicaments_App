@@ -5,16 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example1.projectapp.Models.User
+import com.example1.projectapp.models.User
 import com.example1.projectapp.databinding.ActivityLoginBinding
-import com.example1.projectapp.viewModels.CartViewModel
 import com.example1.projectapp.viewModels.UserViewModel
 import com.example1.projectapp.viewModels.VMFactory
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding

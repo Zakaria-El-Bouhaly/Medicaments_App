@@ -2,7 +2,6 @@ package com.example1.projectapp
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.example1.projectapp.Models.User
 
 
 class PreferencesHandler {

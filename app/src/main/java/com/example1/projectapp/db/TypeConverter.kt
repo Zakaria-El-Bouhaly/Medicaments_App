@@ -1,7 +1,6 @@
-package com.example1.projectapp.Db
+package com.example1.projectapp.db
 
-import androidx.room.ProvidedTypeConverter
-import com.example1.projectapp.Models.Medicament
+import com.example1.projectapp.models.Medicament
 import com.google.gson.Gson
 import androidx.room.TypeConverter
 

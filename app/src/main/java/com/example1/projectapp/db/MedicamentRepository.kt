@@ -1,8 +1,8 @@
-package com.example1.projectapp.Db
+package com.example1.projectapp.db
 
 import androidx.lifecycle.LiveData
 import com.example1.projectapp.daos.MedicamentDao
-import com.example1.projectapp.Models.Medicament
+import com.example1.projectapp.models.Medicament
 
 class MedicamentRepository(private val medicamentDao: MedicamentDao) {
     val allMedicaments: LiveData<List<Medicament>> = medicamentDao.getAll()

@@ -66,9 +66,9 @@ class MainActivity : AppCompatActivity() {
         var cancel = view.findViewById<Button>(R.id.cancel)
         var logout = view.findViewById<Button>(R.id.logout)
         logout.setOnClickListener {
-//            PreferencesHandler.setUser(this,-1)
-//            startActivity(Intent(this,LoginActivity::class.java))
-//            finish()
+            PreferencesHandler.setUser(this,-1)
+            startActivity(Intent(this,LoginActivity::class.java))
+            finish()
             alertDialog.dismiss()
             Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show()
         }

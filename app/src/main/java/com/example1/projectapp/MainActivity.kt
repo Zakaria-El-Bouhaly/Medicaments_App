@@ -48,10 +48,6 @@ class MainActivity : AppCompatActivity() {
             R.id.logout -> {
                 logoutClicked()
             }
-            R.id.app_search -> {
-//                logoutClicked()
-
-            }
             else -> {
 
             }

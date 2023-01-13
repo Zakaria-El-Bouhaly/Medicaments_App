@@ -3,10 +3,8 @@ package com.example1.projectapp
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.SearchView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -25,9 +23,7 @@ class SearchFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -52,7 +48,7 @@ class SearchFragment : Fragment() {
                 medicamentViewModel.getMedicamentByName(p0 + "%")
                     .observe(requireActivity(), Observer {
                         if(it.isEmpty()){
-                            binding.oops.text = MTConstants.OOPS[Random().nextInt(MTConstants.OOPS.size)]
+                            binding.oops.text = Constants.OOPS[Random().nextInt(Constants.OOPS.size)]
                             binding.oopsText.setText(R.string.OOPS)
                             binding.oopsText.visibility = View.VISIBLE;
                             binding.oops.visibility = View.VISIBLE;

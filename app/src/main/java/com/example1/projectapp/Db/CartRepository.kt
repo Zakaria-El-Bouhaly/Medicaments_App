@@ -1,7 +1,7 @@
 package com.example1.projectapp.Db
 
 import androidx.lifecycle.LiveData
-import com.example1.projectapp.Daos.CartUserDao
+import com.example1.projectapp.daos.CartUserDao
 import com.example1.projectapp.Models.Cart
 
 

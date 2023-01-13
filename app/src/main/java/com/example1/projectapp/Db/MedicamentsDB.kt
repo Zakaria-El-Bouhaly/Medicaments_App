@@ -6,14 +6,13 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.example1.projectapp.Daos.CartUserDao
-import com.example1.projectapp.Daos.MedicamentDao
-import com.example1.projectapp.Daos.UserDao
+import com.example1.projectapp.daos.CartUserDao
+import com.example1.projectapp.daos.MedicamentDao
+import com.example1.projectapp.daos.UserDao
 import com.example1.projectapp.Models.Cart
 import com.example1.projectapp.Models.Medicament
 import com.example1.projectapp.Models.User
 import com.example1.projectapp.utils.ioThread
-import java.util.concurrent.Executors
 import kotlin.math.roundToInt
 import kotlin.random.Random
 
@@ -39,6 +38,7 @@ abstract class MedicamentsDB : RoomDatabase() {
                     "MedicamentsDB"
                 ).addCallback(seedDatabaseCallback(context.applicationContext))
                     .fallbackToDestructiveMigration()
+                    .allowMainThreadQueries()
                     .build()
                 INSTANCE = instance
                 return instance

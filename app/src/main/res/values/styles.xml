@@ -30,4 +30,7 @@
         <item name="color">@color/black</item>
         <item name="android:title">HHHH</item>
     </style>
+    <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+    </style>
 </resources>

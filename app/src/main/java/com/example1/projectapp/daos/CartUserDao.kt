@@ -1,9 +1,8 @@
-package com.example1.projectapp.Daos
+package com.example1.projectapp.daos
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.example1.projectapp.Models.Cart
-import com.example1.projectapp.Models.Medicament
 
 @Dao
 interface CartUserDao {

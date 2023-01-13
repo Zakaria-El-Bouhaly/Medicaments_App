@@ -44,7 +44,7 @@ class ItemDetailsActivity : AppCompatActivity() {
         binding.substance.text = medicament.substance.toString()
         cartViewModel =  ViewModelProvider(this)[CartViewModel::class.java]
         binding.addToCart.setOnClickListener{
-            var cart = Cart(0,1,medicament)
+            val cart = Cart(0,PreferencesHandler.getUser(this),medicament)
             cartViewModel.insert(cart)
 
         }

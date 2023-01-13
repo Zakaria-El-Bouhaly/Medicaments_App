@@ -1,6 +1,6 @@
 package com.example1.projectapp
 
-class MTConstants {
+class Constants {
     companion object {
         val OOPS = arrayOf(
             "¯\\_(ツ)_/¯",
@@ -11,5 +11,6 @@ class MTConstants {
             "(ø_ø)",
             "＼（〇_ｏ）／"
         )
+        const val PACKAGE_NAME = "com.example.myapp"
     }
 }

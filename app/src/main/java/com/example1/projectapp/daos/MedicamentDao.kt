@@ -1,4 +1,4 @@
-package com.example1.projectapp.Daos
+package com.example1.projectapp.daos
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao

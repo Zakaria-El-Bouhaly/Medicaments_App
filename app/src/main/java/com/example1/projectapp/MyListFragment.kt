@@ -36,10 +36,10 @@ class MyListFragment : Fragment() , IDeletecListener{
         val adapter = MyMedicamentAdapter(requireContext(),cartList,this)
         binding.myList.adapter = adapter
         cartViewModel = ViewModelProvider(this)[CartViewModel::class.java]
-        cartViewModel.getAllCartByUser(1).observe(requireActivity(), Observer {
+        cartViewModel.getAllCartByUser(PreferencesHandler.getUser(requireContext())).observe(requireActivity(), Observer {
 
             if(it.isEmpty()){
-                binding.oops.text = MTConstants.OOPS[Random().nextInt(MTConstants.OOPS.size)]
+                binding.oops.text = Constants.OOPS[Random().nextInt(Constants.OOPS.size)]
                 binding.oopsText.setText(R.string.OOPS)
                 binding.oopsText.visibility = View.VISIBLE;
                 binding.oops.visibility = View.VISIBLE;

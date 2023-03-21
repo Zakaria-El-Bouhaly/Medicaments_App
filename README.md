@@ -1,0 +1,1 @@
+This app is an example of how to use MVVM architecture and Room database. it allows the user to add, edit and delete medications from a list. The app will use a ViewModel to communicate between the UI and the repository, which will handle the data operations with Room. Room is an abstraction layer over SQLite that makes it easier to work with databases in Android.
